@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "5ac96a93-06a0-448f-bcb0-f7d7e3671988",
+		"name": "CoffeeShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10724583"
+	},
+	"item": [
+		{
+			"name": "Transaksi",
+			"item": [
+				{
+					"name": "Post Full",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idTransaksi\": 1,\r\n  \"pelanggan\": {\r\n    \"idPelanggan\": 1,\r\n    \"namaPelanggan\": \"John Doe\",\r\n    \"alamatPelanggan\": \"Jl. ABC No. 123\",\r\n    \"telpPelanggan\": \"081234567890\",\r\n    \"emailPelanggan\": \"john@example.com\"\r\n  },\r\n  \"produk\": {\r\n    \"idProduk\": 1,\r\n    \"namaProduk\": \"Product 1\",\r\n    \"deskripsiProduk\": \"Deskripsi Product 1\",\r\n    \"hargaProduk\": 10000.0,\r\n    \"stokProduk\": 10\r\n  },\r\n  \"tanggalTransaksi\": \"2023-07-10\",\r\n  \"hargaTransaksi\": 5000.0,\r\n  \"metodePembayaran\": \"Cash\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/transaksi/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transaksi",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTransaksi\": 1,\r\n    \"pelanggan\": {\r\n        \"idPelanggan\": 1,\r\n        \"namaPelanggan\": \"Pelanggan 1\",\r\n        \"alamatPelanggan\": \"Alamat 1\",\r\n        \"telpPelanggan\": \"Telepon 1\",\r\n        \"emailPelanggan\": \"email1@example.com\"\r\n    },\r\n    \"produk\": {\r\n        \"idProduk\": 1,\r\n        \"namaProduk\": \"Produk 1\",\r\n        \"deskripsiProduk\": \"Deskripsi produk 1\",\r\n        \"hargaProduk\": 71.09,\r\n        \"stokProduk\": 6\r\n    },\r\n    \"tanggalTransaksi\": \"2023-07-10T00:00:00.000+00:00\",\r\n    \"hargaTransaksi\": 5000.0,\r\n    \"metodePembayaran\": \"Cash\",\r\n    \"idPelanggan\": 1,\r\n    \"idProduk\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/transaksi/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transaksi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transaksi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transaksi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transaksi/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transaksi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transaksi/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transaksi",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produk",
+			"item": [
+				{
+					"name": "ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/produk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduk\": 1,\r\n    \"namaProduk\": \"Produk 1\",\r\n    \"deskripsiProduk\": \"Deskripsi produk 1\",\r\n    \"hargaProduk\": 71.09,\r\n    \"stokProduk\": 7\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduk\": 1000,\r\n    \"namaProduk\": \"Produk 1000\",\r\n    \"deskripsiProduk\": \"Deskripsi produk 1\",\r\n    \"hargaProduk\": 71.09,\r\n    \"stokProduk\": 6\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pelanggan",
+			"item": [
+				{
+					"name": "ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/produk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduk\": 1,\r\n    \"namaProduk\": \"Produk 1\",\r\n    \"deskripsiProduk\": \"Deskripsi produk 1\",\r\n    \"hargaProduk\": 71.09,\r\n    \"stokProduk\": 7\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduk\": 1000,\r\n    \"namaProduk\": \"Produk 1000\",\r\n    \"deskripsiProduk\": \"Deskripsi produk 1\",\r\n    \"hargaProduk\": 71.09,\r\n    \"stokProduk\": 6\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Penawaran",
+			"item": [
+				{
+					"name": "ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/produk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduk\": 1,\r\n    \"namaProduk\": \"Produk 1\",\r\n    \"deskripsiProduk\": \"Deskripsi produk 1\",\r\n    \"hargaProduk\": 71.09,\r\n    \"stokProduk\": 7\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idProduk\": 1000,\r\n    \"namaProduk\": \"Produk 1000\",\r\n    \"deskripsiProduk\": \"Deskripsi produk 1\",\r\n    \"hargaProduk\": 71.09,\r\n    \"stokProduk\": 6\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/produk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/produk/1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produk",
+								"1000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,56 @@
+-- coffeeshop.pelanggan definition
+
+CREATE TABLE `pelanggan` (
+  `id_pelanggan` int(11) NOT NULL,
+  `nama_pelanggan` varchar(255) DEFAULT NULL,
+  `alamat_pelanggan` varchar(255) DEFAULT NULL,
+  `telp_pelanggan` varchar(255) DEFAULT NULL,
+  `email_pelanggan` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_pelanggan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- coffeeshop.penawaran definition
+
+CREATE TABLE `penawaran` (
+  `id_penawaran` int(11) NOT NULL,
+  `id_pelanggan` int(11) DEFAULT NULL,
+  `id_produk` int(11) DEFAULT NULL,
+  `diskon` double NOT NULL,
+  `harga_khusus` double NOT NULL,
+  `promo_lain` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_penawaran`),
+  KEY `id_pelanggan` (`id_pelanggan`),
+  KEY `id_produk` (`id_produk`),
+  CONSTRAINT `penawaran_ibfk_1` FOREIGN KEY (`id_pelanggan`) REFERENCES `pelanggan` (`id_pelanggan`),
+  CONSTRAINT `penawaran_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- coffeeshop.produk definition
+
+CREATE TABLE `produk` (
+  `id_produk` int(11) NOT NULL,
+  `nama_produk` varchar(255) DEFAULT NULL,
+  `deskripsi_produk` varchar(255) DEFAULT NULL,
+  `harga_produk` double NOT NULL,
+  `stok_produk` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_produk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+-- coffeeshop.transaksi definition
+
+CREATE TABLE `transaksi` (
+  `id_transaksi` int(11) NOT NULL,
+  `id_pelanggan` int(11) DEFAULT NULL,
+  `id_produk` int(11) DEFAULT NULL,
+  `tanggal_transaksi` datetime(6) DEFAULT NULL,
+  `harga_transaksi` double NOT NULL,
+  `metode_pembayaran` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_transaksi`),
+  KEY `id_pelanggan` (`id_pelanggan`),
+  KEY `id_produk` (`id_produk`),
+  CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`id_pelanggan`) REFERENCES `pelanggan` (`id_pelanggan`),
+  CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
